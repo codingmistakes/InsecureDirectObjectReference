@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IEnumerable<InsecureDirectObjectReference.Models.Account>
+
+@{
+    InsecureDirectObjectReference.Models.User user = ViewBag.CurrentUser;
+}
+
+<center>
+    <div class="row" style="position: relative">
+        <div class="col-md-12">
+            <h2>Account Listing <span class="badge badge-info">@user.FullName</span></h2>
+        </div>
+    </div>
+</center>
+
+<br/>
+
+<table class="table table-striped" style="margin:auto; width: 50%;">
+    <thead>
+        <tr>
+            <th>Account ID</th>
+            <th>Title</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (InsecureDirectObjectReference.Models.Account account in Model)
+        {
+            <tr>
+                <td>@account.ID</td>
+                <td>@account.Title</td>
+                <td>@Html.ActionLink("Details", "Detail", new { id = account.ID })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

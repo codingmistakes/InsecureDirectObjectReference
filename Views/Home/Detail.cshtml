@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model InsecureDirectObjectReference.Models.Account
+
+
+@{
+    InsecureDirectObjectReference.Models.User user = ViewBag.CurrentUser;
+}
+
+<center>
+    <div class="row" style="position: relative">
+        <div class="col-md-12">
+            <h2>@Model.Title Account</h2>
+        </div>
+    </div>
+</center>
+
+<br />
+
+<table class="table table-hover" style="width:60%; margin:auto;">
+    <tbody>
+        <tr>
+            <th class="table-warning" scope="row" style="width:30%">Account ID</th>
+            <td>@Model.ID</td>
+        </tr>        
+        <tr>
+            <th class="table-warning" scope="row">Name</th>
+            <td><h4><span class="badge badge-info">@Model.FullName</span></h4></td>
+        </tr>
+        <tr>
+            <th class="table-warning" scope="row">Title</th>
+            <td>@Model.Title</td>
+        </tr>
+        <tr>
+            <th class="table-warning" scope="row">Amount</th>
+            <td>@Model.Amount</td>
+        </tr>
+        <tr>
+            <th class="table-warning" scope="row">Description</th>
+            <td>@Model.Description</td>
+        </tr>
+    </tbody>
+</table>
+
+
